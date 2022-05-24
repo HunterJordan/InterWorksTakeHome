@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+
+  pyscript:
+    container_name: pyscript
+    build: "."
+    tty: true
+    stdin_open: true
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./app:/usr/app
+    command: ["./wait-for-it.sh", "pgdb:5432", "--", "python", "-u", "main.py"]
+    env_file:
+      - ./.env
+
+  pgdb:
+    container_name: pgbg
+    image: postgres:13
+    env_file:
+      - ./.env
+    environment:
+      - POSTGRES_URL=$DB_HOST
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASS
+      - POSTGRES_DB=$DB_DATABASE
+    ports:
+      - "5432:5432"
