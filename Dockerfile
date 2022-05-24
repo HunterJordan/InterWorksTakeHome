@@ -7,8 +7,6 @@ WORKDIR /usr/
 COPY app/. ./app
 COPY main.py main.py
 
-
-CMD ls -la /
 EXPOSE 5005
 
 ENTRYPOINT [ "python", "-u", "main.py" ]
