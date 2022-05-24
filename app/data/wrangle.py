@@ -148,7 +148,7 @@ def wrangle():
 
 """
 NOTES ON DF:
-    - TAILNUM has @symbols in this columns
+    - TAILNUM has @ symbols in this columns
     - 1073206 NA values
     - Columns CANCELLED and DIVERTED are all False
     - Time columns cause some issues with Timezone stamp
