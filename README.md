@@ -1,4 +1,4 @@
-###Before running:
+### Before running:
 Add a .env file to the root of the directory with the following variables
 
 ```commandline
